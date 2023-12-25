@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7rfigfckeftw"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/testing_scene.gd" id="1_4r385"]
+[ext_resource type="PackedScene" uid="uid://ccjj7thph858d" path="res://Scenes/Towers/tower_prototype.tscn" id="2_0hp2m"]
+
+[node name="Testing_Scene" type="Node3D"]
+script = ExtResource("1_4r385")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 27.77, 27.305)
+projection = 1
+current = true
+size = 25.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.865441, -0.414355, 0.281641, -0.0166789, 0.585662, 0.810383, -0.500733, 0.696642, -0.513767, -41.6492, 71.8183, 129.939)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.286041, 0)
+size = Vector3(30, 2, 30)
+
+[node name="Tower_Prototype" parent="." node_paths=PackedStringArray("spawn_position") instance=ExtResource("2_0hp2m")]
+transform = Transform3D(1.00069, 0, 0, 0, 1.00069, 0, 0, 0, 1.00069, -10.8283, 1.82443, 1.42287)
+spawn_position = NodePath("../Marker3D")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1295, 2.38416, 1.65573)
+gizmo_extents = 1.0

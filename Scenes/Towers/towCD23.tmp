@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccjj7thph858d"]
+
+[ext_resource type="Script" path="res://tower_prototype.gd" id="1_ny8em"]
+[ext_resource type="Script" path="res://Scenes/Towers/toop_movement.gd" id="2_aq3w3"]
+[ext_resource type="Script" path="res://selection_area.gd" id="2_qcj7g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d1clm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhv84"]
+size = Vector3(1.04557, 1.95583, 1.10636)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrtv2"]
+transparency = 1
+albedo_color = Color(0, 0.607843, 0.898039, 0.32549)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_agife"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5gg5s"]
+
+[node name="Tower_Prototype" type="StaticBody3D"]
+transform = Transform3D(1.00069, 0, 0, 0, 1.00069, 0, 0, 0, 1.00069, 0, 0, 0)
+script = ExtResource("1_ny8em")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.97594, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_d1clm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_yhv84")
+
+[node name="Troops" type="CharacterBody3D" parent="."]
+script = ExtResource("2_aq3w3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Troops"]
+
+[node name="Selection Area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09341, 0)
+script = ExtResource("2_qcj7g")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Selection Area"]
+transform = Transform3D(1.37281, 0, 0, 0, 1.08457, 0, 0, 0, 1.06591, 0, -0.995557, 0)
+shape = SubResource("BoxShape3D_yhv84")
+
+[node name="Radius" type="MeshInstance3D" parent="."]
+transform = Transform3D(18.3067, 0, 0, 0, 0.00117375, 0, 0, 0, 17.9754, -0.0123082, -1.01993, -0.00983976)
+material_override = SubResource("StandardMaterial3D_mrtv2")
+mesh = SubResource("CylinderMesh_agife")
+
+[node name="Area3D" type="Area3D" parent="Radius"]
+
+[node name="Clickable" type="CollisionShape3D" parent="Radius/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_5gg5s")
+
+[connection signal="select_toggled" from="Selection Area" to="." method="_on_selection_area_select_toggled"]
+[connection signal="input_event" from="Radius/Area3D" to="." method="_on_area_3d_input_event"]

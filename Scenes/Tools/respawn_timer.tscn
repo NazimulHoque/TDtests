@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://uhjjgdjhmmem"]
+
+[ext_resource type="PackedScene" uid="uid://bgvkd5jrpjnof" path="res://Scenes/Tools/timer_interface.tscn" id="1_lfpaj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5gxj2"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhv6o"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_5gxj2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4p0bh"]
+
+[node name="RESPAWN TIMER" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140598, 0.33909, 0)
+material_override = SubResource("StandardMaterial3D_dhv6o")
+mesh = SubResource("QuadMesh_4p0bh")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Control" parent="SubViewport" instance=ExtResource("1_lfpaj")]
+offset_left = -55.0801
+offset_top = 209.068
+offset_right = -83.7521
+offset_bottom = 154.284

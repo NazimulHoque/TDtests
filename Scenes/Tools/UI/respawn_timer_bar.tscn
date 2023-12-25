@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3w3leae0rgcq"]
+
+[ext_resource type="Script" path="res://Scripts/UI/respawn_bar.gd" id="1_7edbv"]
+[ext_resource type="Texture2D" uid="uid://5m3hanto3dv5" path="res://Assets/UI/progress-bar-circle.png" id="2_rdqse"]
+[ext_resource type="Texture2D" uid="uid://dhnno6jeyw0e4" path="res://Assets/UI/progress-bar-frame.png" id="3_3hbdh"]
+
+[node name="Respawn_Bar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_7edbv")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.187
+anchor_top = 0.21
+anchor_right = 0.611
+anchor_bottom = 0.605
+offset_left = 10.576
+offset_top = 15.92
+offset_right = 222.128
+offset_bottom = 103.96
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.62207, 0.64503)
+value = 34.0
+fill_mode = 4
+texture_under = ExtResource("2_rdqse")
+texture_over = ExtResource("3_3hbdh")
+texture_progress = ExtResource("2_rdqse")
+tint_under = Color(0.105882, 0.454902, 0.788235, 1)
+tint_over = Color(0.164706, 0.529412, 0.890196, 0.415686)
+tint_progress = Color(0, 0, 0, 0.627451)

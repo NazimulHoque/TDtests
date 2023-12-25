@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://dgaxc8h2a3kqg"]
+
+[ext_resource type="Script" path="res://ally_prototype.gd" id="1_rm7bk"]
+[ext_resource type="Script" path="res://Resources/ally_data.gd" id="2_dcrwu"]
+[ext_resource type="Script" path="res://finite_state_machine.gd" id="3_t51fr"]
+[ext_resource type="Script" path="res://Scripts/States/Ally/ally_idle.gd" id="4_yy1x3"]
+[ext_resource type="Script" path="res://Scripts/States/Ally/ally_fight.gd" id="5_tvwry"]
+
+[sub_resource type="Resource" id="Resource_1waja"]
+script = ExtResource("2_dcrwu")
+health = 10.0
+speed = 6.0
+attack_power = 2.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a0wop"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk08d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jiifu"]
+size = Vector3(3.2516, 3.29947, 3.07246)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qldsh"]
+size = Vector3(4.70298, 4.68881, 5.20895)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7t315"]
+
+[node name="Ally Prototype" type="CharacterBody3D" node_paths=PackedStringArray("nav")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+input_ray_pickable = false
+motion_mode = 1
+script = ExtResource("1_rm7bk")
+ally_data = SubResource("Resource_1waja")
+nav = NodePath("NavigationAgent3D")
+
+[node name="Player Capsule" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_a0wop")
+surface_material_override/0 = SubResource("StandardMaterial3D_fk08d")
+
+[node name="Player Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jiifu")
+
+[node name="Assist Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Attack Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Enemy Detection" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+input_ray_pickable = false
+
+[node name="Enemy Detection Shape" type="CollisionShape3D" parent="Enemy Detection"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+shape = SubResource("BoxShape3D_qldsh")
+
+[node name="Ally Detection" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="Ally Detection Shape" type="CollisionShape3D" parent="Ally Detection"]
+shape = SubResource("BoxShape3D_qldsh")
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("3_t51fr")
+state = NodePath("Ally_Idle")
+
+[node name="Ally_Idle" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "assist_timer")]
+script = ExtResource("4_yy1x3")
+actor = NodePath("../..")
+assist_timer = NodePath("../../Assist Timer")
+
+[node name="Ally_Fighting" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "attack_timer")]
+script = ExtResource("5_tvwry")
+actor = NodePath("../..")
+attack_timer = NodePath("../../Attack Timer")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.5
+avoidance_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.769526, 0, 0, 0, 0.24045, 0, 0, 0, 1.13359, 0, 0.387512, -0.140072)
+mesh = SubResource("CylinderMesh_7t315")
+
+[connection signal="timeout" from="Assist Timer" to="FiniteStateMachine/Ally_Idle" method="_on_assist_timer_timeout"]
+[connection signal="timeout" from="Attack Timer" to="FiniteStateMachine/Ally_Fighting" method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="Enemy Detection" to="FiniteStateMachine/Ally_Idle" method="_on_enemy_detection_body_entered"]
+[connection signal="body_exited" from="Enemy Detection" to="FiniteStateMachine/Ally_Idle" method="_on_enemy_detection_body_exited"]
+[connection signal="body_exited" from="Enemy Detection" to="FiniteStateMachine/Ally_Fighting" method="_on_enemy_detection_body_exited"]
+[connection signal="body_entered" from="Ally Detection" to="FiniteStateMachine/Ally_Idle" method="_on_ally_detection_body_entered"]
+[connection signal="body_exited" from="Ally Detection" to="FiniteStateMachine/Ally_Idle" method="_on_ally_detection_body_exited"]

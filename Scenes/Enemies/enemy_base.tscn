@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://b31uwwsqplhqs"]
+
+[ext_resource type="Script" path="res://finite_state_machine.gd" id="1_e370i"]
+[ext_resource type="Script" path="res://Scripts/Enemies/enemy_base.gd" id="1_yxq2s"]
+[ext_resource type="Script" path="res://Resources/enemy_data.gd" id="2_hcf0x"]
+[ext_resource type="Script" path="res://Scripts/States/Enemy/enemy_patrol_state.gd" id="3_1ew5o"]
+[ext_resource type="Script" path="res://Scripts/States/Enemy/enemy_aggro_state.gd" id="4_tyl57"]
+
+[sub_resource type="Resource" id="Resource_156gf"]
+script = ExtResource("2_hcf0x")
+health = 100.0
+speed = 10.0
+attack_power = 100.0
+currency_drop = 10
+hp_loss = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_xn4e6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pm5sm"]
+size = Vector3(1.55699, 1.38245, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bu22h"]
+size = Vector3(7.54556, 5.57919, 7.04673)
+
+[node name="Base_Enemy" type="PathFollow3D"]
+loop = false
+
+[node name="Enemy" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 4
+collision_mask = 5
+input_ray_pickable = false
+script = ExtResource("1_yxq2s")
+enemy_data = SubResource("Resource_156gf")
+
+[node name="Character Shape" type="MeshInstance3D" parent="Enemy"]
+mesh = SubResource("BoxMesh_xn4e6")
+skeleton = NodePath("../..")
+
+[node name="Character Collision" type="CollisionShape3D" parent="Enemy"]
+shape = SubResource("BoxShape3D_pm5sm")
+
+[node name="Area3D" type="Area3D" parent="Enemy"]
+collision_layer = 2
+collision_mask = 2
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/Area3D"]
+shape = SubResource("BoxShape3D_bu22h")
+
+[node name="FiniteStateMachine" type="Node" parent="Enemy" node_paths=PackedStringArray("state")]
+script = ExtResource("1_e370i")
+state = NodePath("Enemy_Patrol_State")
+
+[node name="Enemy_Patrol_State" type="Node" parent="Enemy/FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("3_1ew5o")
+actor = NodePath("../..")
+
+[node name="Enemy_Aggro_State" type="Node" parent="Enemy/FiniteStateMachine" node_paths=PackedStringArray("actor", "attack_timer")]
+script = ExtResource("4_tyl57")
+actor = NodePath("../..")
+attack_timer = NodePath("../../Attack Timer")
+
+[node name="Attack Timer" type="Timer" parent="Enemy"]
+
+[connection signal="body_entered" from="Enemy/Area3D" to="Enemy/FiniteStateMachine/Enemy_Patrol_State" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Enemy/Area3D" to="Enemy/FiniteStateMachine/Enemy_Patrol_State" method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Enemy/Attack Timer" to="Enemy/FiniteStateMachine/Enemy_Aggro_State" method="_on_attack_timer_timeout"]

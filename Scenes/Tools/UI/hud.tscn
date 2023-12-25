@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://t3urann63vxg"]
+
+[ext_resource type="Script" path="res://Scripts/UI/hud.gd" id="1_7ydee"]
+
+[sub_resource type="SystemFont" id="SystemFont_n5pc0"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_movf4"]
+font = SubResource("SystemFont_n5pc0")
+font_size = 30
+font_color = Color(0.803922, 0, 0.807843, 1)
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("curr_label", "health_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_7ydee")
+curr_label = NodePath("Currency")
+health_label = NodePath("Health")
+
+[node name="Currency" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Currency: "
+label_settings = SubResource("LabelSettings_movf4")
+
+[node name="Health" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -139.0
+offset_top = 6.0
+offset_right = -27.0
+offset_bottom = 51.0
+grow_horizontal = 0
+text = "Health: "
+label_settings = SubResource("LabelSettings_movf4")

@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://ccjj7thph858d"]
+
+[ext_resource type="Script" path="res://tower_prototype.gd" id="1_ny8em"]
+[ext_resource type="Script" path="res://selection_area.gd" id="2_qcj7g"]
+[ext_resource type="PackedScene" uid="uid://bgvkd5jrpjnof" path="res://Scenes/Tools/timer_interface.tscn" id="3_vyv44"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d1clm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhv84"]
+size = Vector3(1.04557, 1.95583, 1.10636)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrtv2"]
+transparency = 1
+albedo_color = Color(0, 0.607843, 0.898039, 0.32549)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_agife"]
+lightmap_size_hint = Vector2i(17, 19)
+cap_bottom = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5gg5s"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m3qmc"]
+viewport_path = NodePath("Respawn Timer Interface/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dv2y"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_m3qmc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4p0bh"]
+
+[node name="Tower_Prototype" type="StaticBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_ny8em")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.97594, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_d1clm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_yhv84")
+
+[node name="Troops" type="Node3D" parent="."]
+
+[node name="Selection Area" type="Area3D" parent="."]
+transform = Transform3D(1.00348, 0, 0, 0, 1.00348, 0, 0, 0, 1.00348, 0, 1.09341, 0)
+script = ExtResource("2_qcj7g")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Selection Area"]
+transform = Transform3D(1.37281, 0, 0, 0, 1.08457, 0, 0, 0, 1.06591, 0, -0.995557, 0)
+shape = SubResource("BoxShape3D_yhv84")
+
+[node name="Radius" type="MeshInstance3D" parent="."]
+transform = Transform3D(14.1374, 0, 0, 0, 0.00117157, 0, 0, 0, 15.0276, -0.0123082, -1.01993, -0.00983976)
+layers = 2
+material_override = SubResource("StandardMaterial3D_mrtv2")
+mesh = SubResource("CylinderMesh_agife")
+
+[node name="Movement_Area" type="Area3D" parent="Radius"]
+collision_priority = 3.0
+
+[node name="Clickable" type="CollisionShape3D" parent="Radius/Movement_Area"]
+shape = SubResource("CylinderShape3D_5gg5s")
+
+[node name="Respawn Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Respawn Timer Interface" type="Node3D" parent="."]
+transform = Transform3D(7.69631, 0, 0, 0, 6.50337, 1.28674, 0, -4.10586, 2.03809, 0.0161422, 4.01835, -0.161953)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Respawn Timer Interface"]
+transform = Transform3D(1.78651, 0, 0, 0, 1.43083, 3.72529e-07, 0, 1.66893e-06, 1.26684, 0.229928, 0.42204, 0.167109)
+material_override = SubResource("StandardMaterial3D_1dv2y")
+mesh = SubResource("QuadMesh_4p0bh")
+
+[node name="SubViewport" type="SubViewport" parent="Respawn Timer Interface"]
+transparent_bg = true
+
+[node name="Radial" parent="Respawn Timer Interface/SubViewport" instance=ExtResource("3_vyv44")]
+offset_left = -55.0801
+offset_top = 209.068
+offset_right = -83.7521
+offset_bottom = 154.284
+
+[connection signal="movement_done" from="." to="Selection Area" method="_on_tower_prototype_movement_done"]
+[connection signal="select_toggled" from="Selection Area" to="." method="_on_selection_area_select_toggled"]
+[connection signal="input_event" from="Radius/Movement_Area" to="." method="_on_area_3d_input_event"]
+[connection signal="timeout" from="Respawn Timer" to="." method="_on_respawn_timer_timeout"]

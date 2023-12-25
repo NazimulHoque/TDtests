@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgaxc8h2a3kqg"]
+
+[ext_resource type="Script" path="res://ally_prototype.gd" id="1_rm7bk"]
+[ext_resource type="Script" path="res://Resources/ally_data.gd" id="2_dcrwu"]
+[ext_resource type="Script" path="res://finite_state_machine.gd" id="3_t51fr"]
+[ext_resource type="Script" path="res://Scripts/States/Ally/ally_idle.gd" id="4_yy1x3"]
+[ext_resource type="Script" path="res://Scripts/States/Ally/ally_fight.gd" id="5_tvwry"]
+
+[sub_resource type="Resource" id="Resource_1waja"]
+script = ExtResource("2_dcrwu")
+health = 10.0
+speed = 10.0
+attack_power = 2.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a0wop"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk08d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jiifu"]
+size = Vector3(7.42716, 4.14834, 3.43618)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qldsh"]
+size = Vector3(6.24244, 4.7775, 5.68884)
+
+[node name="Ally Prototype" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_rm7bk")
+ally_data = SubResource("Resource_1waja")
+
+[node name="Player Capsule" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_a0wop")
+surface_material_override/0 = SubResource("StandardMaterial3D_fk08d")
+
+[node name="Player Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0224609, 0, 0)
+shape = SubResource("BoxShape3D_jiifu")
+
+[node name="Assist Timer" type="Timer" parent="."]
+
+[node name="Attack Timer" type="Timer" parent="."]
+
+[node name="Enemy Detection" type="Area3D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="Enemy Detection Shape" type="CollisionShape3D" parent="Enemy Detection"]
+shape = SubResource("BoxShape3D_qldsh")
+
+[node name="Ally Detection" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Ally Detection Shape" type="CollisionShape3D" parent="Ally Detection"]
+shape = SubResource("BoxShape3D_qldsh")
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("3_t51fr")
+state = NodePath("Ally_Idle")
+
+[node name="Ally_Idle" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "assist_timer")]
+script = ExtResource("4_yy1x3")
+actor = NodePath("../..")
+assist_timer = NodePath("../../Assist Timer")
+
+[node name="Ally_Fighting" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "attack_timer")]
+script = ExtResource("5_tvwry")
+actor = NodePath("../..")
+attack_timer = NodePath("../../Attack Timer")
+
+[connection signal="timeout" from="Attack Timer" to="FiniteStateMachine/Ally_Fighting" method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="Enemy Detection" to="FiniteStateMachine/Ally_Idle" method="_on_enemy_detection_body_entered"]
+[connection signal="body_exited" from="Enemy Detection" to="FiniteStateMachine/Ally_Idle" method="_on_enemy_detection_body_exited"]
+[connection signal="body_entered" from="Ally Detection" to="FiniteStateMachine/Ally_Idle" method="_on_ally_detection_body_entered"]
+[connection signal="body_exited" from="Ally Detection" to="FiniteStateMachine/Ally_Idle" method="_on_ally_detection_body_exited"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm54dvratkexs"]
+
+[ext_resource type="Script" path="res://selection_area.gd" id="1_pmlfx"]
+
+[node name="Selection Area" type="Area3D"]
+script = ExtResource("1_pmlfx")
+
+[node name="Selection Shape" type="CollisionShape3D" parent="."]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Enemy_Data" load_steps=2 format=3 uid="uid://bo2uc2efertfy"]
+
+[ext_resource type="Script" path="res://Resources/enemy_data.gd" id="1_rls1y"]
+
+[resource]
+script = ExtResource("1_rls1y")
+health = 0.0
+speed = 0.0
+attack_power = 0.0
