@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwdauucixvh7c"]
+[gd_scene load_steps=7 format=3 uid="uid://dwdauucixvh7c"]
 
 [ext_resource type="MeshLibrary" uid="uid://dllju2uue8qhx" path="res://MeshLibs/TDKit.tres" id="1_g5sqq"]
 [ext_resource type="Script" path="res://Scenes/Tiles/TileSelectorGM.gd" id="2_3j4ra"]
+[ext_resource type="PackedScene" uid="uid://t3urann63vxg" path="res://Scenes/Tools/UI/hud.tscn" id="3_3ephy"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_v6301"]
 
@@ -26,9 +27,9 @@ light_volumetric_fog_energy = 0.0
 directional_shadow_split_1 = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.909961, -0.268771, 0.315805, 0, 0.761538, 0.64812, -0.414693, -0.589764, 0.69297, 36.39, 32.785, 40.735)
+transform = Transform3D(-0.566406, -0.534132, 0.627604, 0, 0.761538, 0.64812, -0.824126, 0.367099, -0.43134, 61.515, 31.9, -28.53)
 projection = 1
-size = 61.093
+size = 85.783
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(5.49, 0, 0, 0, 5.49, 0, 0, 0, 5.49, 0, 0, 0)
@@ -43,3 +44,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
 size = Vector3(143.25, 2.67414, 99.4161)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_3ephy")]

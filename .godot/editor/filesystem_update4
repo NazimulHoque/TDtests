@@ -4,5 +4,3 @@ res://Scenes/Towers/cannon_ball.tscn
 res://Scenes/Towers/tower.tscn
 res://Scenes/Tiles/test_grid_tiles.tscn
 res://Scenes/Tiles/TileSelectorGM.gd
-res://Scenes/Tiles/DebugDraw3D.gd
-res://Scenes/Tiles/DebugOverlay.gd

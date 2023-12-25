@@ -2,6 +2,7 @@ extends GridMap
 
 var ray_origin = Vector3()
 var ray_target = Vector3()
+var floor = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -35,12 +36,12 @@ func mouse_pos_on_map():
 	if not intersection.is_empty():
 		var pos = intersection.position
 		#print(pos)
-		var look_at_me = Vector3(pos.x, 0, pos.z)
+		var look_at_me = Vector3(pos.x, floor, pos.z)
 		var loc_vec = to_local(look_at_me)
 		#print(loc_vec)
 		var local_pos = local_to_map(loc_vec)
 		#print(local_pos)
-		set_cell_item(local_pos, 36, 0)
+		#set_cell_item(local_pos, 36, 0)
 		#print(look_at_me)
 		
 		
