@@ -2,16 +2,16 @@
 
 [ext_resource type="MeshLibrary" uid="uid://dllju2uue8qhx" path="res://MeshLibs/TDKit.tres" id="1_g5sqq"]
 [ext_resource type="Script" path="res://Scenes/Tiles/TileSelectorGM.gd" id="2_3j4ra"]
-[ext_resource type="PackedScene" uid="uid://t3urann63vxg" path="res://Scenes/Tools/UI/hud.tscn" id="3_3ephy"]
+[ext_resource type="PackedScene" uid="uid://lu6swbk1rmbt" path="res://Scenes/Towers/tower.tscn" id="4_viypm"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_v6301"]
 
-[sub_resource type="Sky" id="Sky_58o84"]
+[sub_resource type="Sky" id="Sky_wxc5y"]
 sky_material = SubResource("PhysicalSkyMaterial_v6301")
 
 [sub_resource type="Environment" id="Environment_qjk47"]
 background_mode = 2
-sky = SubResource("Sky_58o84")
+sky = SubResource("Sky_wxc5y")
 glow_enabled = true
 
 [node name="TestGridTiles" type="Node3D"]
@@ -45,6 +45,19 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 use_collision = true
 size = Vector3(143.25, 2.67414, 99.4161)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Tower" parent="." instance=ExtResource("4_viypm")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 32.6092, 1.896, 6.34595)
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_3ephy")]
+[node name="towerUI" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.004
+anchor_bottom = 1.0
+offset_right = -2.60803
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="Label" parent="towerUI"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 26.0
+text = "UI stuff"
