@@ -1,6 +1,10 @@
 Label
-Container
+TextureButton
+ColorRect
+Button
+Control
 CanvasLayer
+Container
 SubViewportContainer
 DirectionalLight3D
 Camera3D
@@ -10,7 +14,6 @@ Panel
 CSGBox3D
 Sprite3D
 WorldEnvironment
-Control
 GridMap
 CollisionShape3D
 Area3D
@@ -27,7 +30,3 @@ NavigationRegion2D
 Marker3D
 TextureRect
 Path3D
-TextureProgressBar
-CollisionPolygon2D
-StaticBody3D
-TextureButton

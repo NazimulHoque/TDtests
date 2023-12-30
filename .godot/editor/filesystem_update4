@@ -1,12 +1,8 @@
-res://Scenes/Tiles/test_scene2.tscn
-res://MeshLibs/TDKit.tres
-res://Scenes/Towers/cannon_ball.tscn
-res://Scenes/Towers/tower.tscn
 res://Scenes/Tiles/test_grid_tiles.tscn
-res://Scenes/Tiles/TileSelectorGM.gd
+res://MeshLibs/TDKit.tres
 res://sidemenu.tscn
+res://Scenes/Towers/tower.tscn
+res://Scenes/Tiles/test_scene2.tscn
 res://ViewportCapture.tscn
 res://ViewportCapture.gd
-res://tower_ui.tscn
-res://Scenes/Tools/UI/hud.tscn
-res://Scenes/Tiles/test_grid_tiles.gd
+res://Scenes/Tiles/TileSelectorGM.gd

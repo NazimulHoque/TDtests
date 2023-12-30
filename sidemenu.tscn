@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dabbp5wi83h34"]
+[gd_scene load_steps=2 format=3 uid="uid://dabbp5wi83h34"]
+
+[ext_resource type="Texture2D" uid="uid://bjaqjrxmk4y0o" path="res://tower_thumb2_noBG.png" id="1_fkqmo"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,7 +12,70 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 888.0
+offset_left = 872.0
 offset_top = 16.0
 offset_right = 1136.0
 offset_bottom = 632.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 616.0
+color = Color(1, 1, 1, 0.360784)
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 48.0
+text = "Side Menu UI"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 56.0
+offset_right = 120.0
+offset_bottom = 152.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Button"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(0.364706, 0.54902, 0.768627, 1)
+
+[node name="Label" type="Label" parent="Panel/Button"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 9
+text = "T1 Cannon tower"
+horizontal_alignment = 1
+
+[node name="TowerThumb2NoBg" type="Sprite2D" parent="Panel/Button"]
+position = Vector2(48, 48)
+scale = Vector2(0.347657, 0.34375)
+texture = ExtResource("1_fkqmo")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 72.0
+offset_right = 1112.0
+offset_bottom = 168.0
+
+[node name="ColorRect" type="ColorRect" parent="TextureButton"]
+offset_right = 96.0
+offset_bottom = 96.0
+color = Color(0.364706, 0.54902, 0.768627, 1)
+
+[node name="Label" type="Label" parent="TextureButton"]
+offset_right = 96.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 9
+text = "T1 Testla tower"
+horizontal_alignment = 1
+
+[node name="TowerThumb2NoBg" type="Sprite2D" parent="TextureButton"]
+position = Vector2(48, 48)
+scale = Vector2(0.347657, 0.34375)
+texture = ExtResource("1_fkqmo")

@@ -34,7 +34,7 @@ transparent_bg = true
 handle_input_locally = false
 size = Vector2i(256, 256)
 render_target_clear_mode = 2
-render_target_update_mode = 3
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(0.028269, -0.318612, 0.947464, 0.00950204, 0.947885, 0.31847, -0.999555, 1.86347e-09, 0.0298232, 1.191, 0.758, 0.05)

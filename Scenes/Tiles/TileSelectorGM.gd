@@ -11,6 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	mouse_pos_on_map()
 
 func _physics_process(delta):
@@ -23,7 +24,7 @@ func mouse_pos_on_map():
 	var mouse_position = get_viewport().get_mouse_position()
 	
 	print(mouse_position)
-	move_ui_to_place(mouse_position)
+	#move_ui_to_place(mouse_position)
 	ray_origin = $"../Camera3D".project_ray_origin(mouse_position)
 	ray_target = ray_origin + $"../Camera3D".project_ray_normal(mouse_position) * 2000
 	#print(ray_origin, ray_target)
@@ -35,18 +36,29 @@ func mouse_pos_on_map():
 	#the meshlibrary later
 	if not intersection.is_empty():
 		var pos = intersection.position
-		print(pos)
+		#print(pos)
 		var look_at_me = Vector3(pos.x, floor, pos.z)
 		var loc_vec = to_local(look_at_me)
 		#print(loc_vec)
-		var local_pos = local_to_map(loc_vec)
-		#print(local_pos)
-		set_cell_item(local_pos, 36, 0)
+		
+		var map_pos = local_to_map(loc_vec)
+		print("map pos", map_pos)
+		
+		#set_cell_item(local_pos, 52, 0)
+		
+		var local_pos = map_to_local(map_pos)
+		print("local pos",local_pos )
+		#must convert to global postion space for accurate postion relative to screen 
+		print("global pos",to_global(local_pos) )
+		
+		var screen_pos = $"../Camera3D".unproject_position(to_global(local_pos))
+		print("camera space from mouse", screen_pos)
+		$Label.set_position(screen_pos)
 		#print(look_at_me)
 		
 
 
 func move_ui_to_place(mousepos):
-	get_node("../towerUI/UI").set_position(mousepos)
+	pass
 
 
