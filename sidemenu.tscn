@@ -64,11 +64,13 @@ offset_right = 1112.0
 offset_bottom = 168.0
 
 [node name="ColorRect" type="ColorRect" parent="TextureButton"]
+layout_mode = 0
 offset_right = 96.0
 offset_bottom = 96.0
 color = Color(0.364706, 0.54902, 0.768627, 1)
 
 [node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
 offset_right = 96.0
 offset_bottom = 24.0
 theme_override_font_sizes/font_size = 9

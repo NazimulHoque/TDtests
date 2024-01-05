@@ -4,5 +4,3 @@ res://sidemenu.tscn
 res://Scenes/Towers/tower.tscn
 res://Scenes/Tiles/test_scene2.tscn
 res://ViewportCapture.tscn
-res://ViewportCapture.gd
-res://Scenes/Tiles/TileSelectorGM.gd

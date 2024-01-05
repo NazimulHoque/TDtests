@@ -1,19 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703968028
+::res://::1704492591
 ally_collision.gd::GDScript::-1::1702090795::0::1::::<>Area3D<>::
 ally_prototype.gd::GDScript::-1::1702090795::0::1::::<>Ally<>::
 finite_state_machine.gd::GDScript::-1::1702090795::0::1::::FiniteStateMachine<>Node<>::
 icon.svg::CompressedTexture2D::2240465360506345730::1702090795::1702090815::1::::<><>::
 README.md::TextFile::-1::1703464738::0::1::::<><>::
 selection_area.gd::GDScript::-1::1702090795::0::1::::<>Area3D<>::
-sidemenu.tscn::PackedScene::7161415542829596385::1703968028::0::1::::<><>::uid://bjaqjrxmk4y0o::::res://tower_thumb2_noBG.png
+sidemenu.tscn::PackedScene::7161415542829596385::1703970033::0::1::::<><>::uid://bjaqjrxmk4y0o::::res://tower_thumb2_noBG.png
 testingrange.tscn::PackedScene::1331574388104987795::1702090795::0::1::::<><>::uid://beqf3xfgcijug
 tower_prototype.gd::GDScript::-1::1702090795::0::1::::<>StaticBody3D<>::
 tower_thumb2_noBG.png::CompressedTexture2D::3019108749452010888::1703923484::1703923484::1::::<><>::
 tower_thumb.png::CompressedTexture2D::1064221553660789488::1703968029::1703968030::1::::<><>::
 tower_ui.tscn::PackedScene::3573354637063415212::1703923770::0::1::::<><>::
-ViewportCapture.gd::GDScript::-1::1703923484::0::1::::<>Node3D<>::
-ViewportCapture.tscn::PackedScene::3796412979964182709::1703968028::0::1::::<><>::uid://lu6swbk1rmbt::::res://Scenes/Towers/tower.tscn<>res://ViewportCapture.gd<>uid://coa32lxopswu6::::res://Assets/Environment/GLTF format/detail_dirt.glb<>uid://613qs78vddas::::res://Assets/Environment/GLTF format/tile_dirt.glb
+ViewportCapture.gd::GDScript::-1::1703968122::0::1::::<>Node3D<>::
+ViewportCapture.tscn::PackedScene::3796412979964182709::1703970033::0::1::::<><>::uid://lu6swbk1rmbt::::res://Scenes/Towers/tower.tscn<>res://ViewportCapture.gd<>uid://coa32lxopswu6::::res://Assets/Environment/GLTF format/detail_dirt.glb<>uid://613qs78vddas::::res://Assets/Environment/GLTF format/tile_dirt.glb
 wave_manager.gd::GDScript::-1::1702098026::0::1::::<>Node3D<>::
 ::res://Assets/::1703464428
 ::res://Assets/Character/::1703464427
@@ -242,16 +242,16 @@ testing_scene.gd::GDScript::-1::1702090795::0::1::::<>Node3D<>::
 testing_scene.tscn::PackedScene::7645086561961395510::1702090840::0::1::::<><>::uid://b31uwwsqplhqs
 ::res://Scenes/Player/::1703464428
 ally_prototype.tscn::PackedScene::7581796920640990670::1702090795::0::1::::<><>::res://ally_prototype.gd<>res://Resources/ally_data.gd<>res://finite_state_machine.gd<>res://Scripts/States/Ally/ally_idle.gd<>res://Scripts/States/Ally/ally_fight.gd
-::res://Scenes/Tiles/::1703968028
+::res://Scenes/Tiles/::1703970033
 DebugDraw3D.gd::GDScript::-1::1703458639::0::1::::<>Control<>::
 DebugOverlay.gd::GDScript::-1::1703458912::0::1::::<>CanvasLayer<>::
 tdktmesh.tscn::PackedScene::2497760735719233235::1703290941::0::1::::<><>::
 test scene.tscn::PackedScene::6467467473224128170::1703282132::0::1::::<><>::uid://dllju2uue8qhx
 test_grid_tiles.gd::GDScript::-1::1703923484::0::1::::<>Node3D<>::
-test_grid_tiles.tscn::PackedScene::8709646514207958262::1703968028::0::1::::<><>::uid://dllju2uue8qhx::::res://MeshLibs/TDKit.tres<>res://Scenes/Tiles/TileSelectorGM.gd<>uid://lu6swbk1rmbt::::res://Scenes/Towers/tower.tscn
-test_scene2.tscn::PackedScene::2612709575724398373::1703968028::0::1::::<><>::uid://n62otdk1oikq::::res://Scenes/Tools/wave_manager.tscn<>uid://b31uwwsqplhqs::::res://Scenes/Enemies/enemy_base.tscn<>res://Scripts/Enemies/wave_data.gd<>uid://lu6swbk1rmbt::::res://Scenes/Towers/tower.tscn<>uid://ccjj7thph858d::::res://Scenes/Towers/tower_prototype.tscn<>uid://dllju2uue8qhx::::res://MeshLibs/TDKit.tres<>uid://t3urann63vxg::::res://Scenes/Tools/UI/hud.tscn
+test_grid_tiles.tscn::PackedScene::8709646514207958262::1703970033::0::1::::<><>::uid://dllju2uue8qhx::::res://MeshLibs/TDKit.tres<>res://Scenes/Tiles/TileSelectorGM.gd<>uid://dabbp5wi83h34::::res://sidemenu.tscn<>uid://lu6swbk1rmbt::::res://Scenes/Towers/tower.tscn
+test_scene2.tscn::PackedScene::2612709575724398373::1703970033::0::1::::<><>::uid://n62otdk1oikq::::res://Scenes/Tools/wave_manager.tscn<>uid://b31uwwsqplhqs::::res://Scenes/Enemies/enemy_base.tscn<>res://Scripts/Enemies/wave_data.gd<>uid://lu6swbk1rmbt::::res://Scenes/Towers/tower.tscn<>uid://ccjj7thph858d::::res://Scenes/Towers/tower_prototype.tscn<>uid://dllju2uue8qhx::::res://MeshLibs/TDKit.tres<>uid://t3urann63vxg::::res://Scenes/Tools/UI/hud.tscn
 tiles.tscn::PackedScene::6783854397746361645::1703292700::0::1::::<><>::uid://coa32lxopswu6
-TileSelectorGM.gd::GDScript::-1::1703924509::0::1::::<>GridMap<>::
+TileSelectorGM.gd::GDScript::-1::1703970032::0::1::::<>GridMap<>::
 ::res://Scenes/Tools/::1703464428
 respawn_timer.tscn::PackedScene::1418790362312381300::1702090795::0::1::::<><>::uid://bgvkd5jrpjnof
 selection_area.tscn::PackedScene::8065226786807244144::1702090795::0::1::::<><>::res://selection_area.gd
@@ -260,11 +260,11 @@ wave_manager.tscn::PackedScene::978116040657361940::1703281167::0::1::::<><>::re
 ::res://Scenes/Tools/UI/::1703923770
 hud.tscn::PackedScene::1392635325303671448::1703923770::0::1::::<><>::res://Scripts/UI/hud.gd
 respawn_timer_bar.tscn::PackedScene::6785265229680064644::1702090795::0::1::::<><>::res://Scripts/UI/respawn_bar.gd<>uid://5m3hanto3dv5
-::res://Scenes/Towers/::1703968028
+::res://Scenes/Towers/::1703970033
 cannon_ball.tscn::PackedScene::3791009099563380257::1703466185::0::1::::<><>::uid://d4mym3dfoled6
 testing_scene_for_tower.tscn::PackedScene::7054296979905846896::1702090795::0::1::::<><>::res://Scenes/Levels/testing_scene.gd<>uid://ccjj7thph858d
 toop_movement.gd::GDScript::-1::1702090795::0::1::::<>CharacterBody3D<>::
-tower.tscn::PackedScene::815280363713888909::1703968028::0::1::::<><>::uid://dfumh3oytegeu::::res://Assets/Towers/Basic/cannonLarge.obj<>res://Scripts/tower.gd<>uid://ytpgoa41mp8n::::res://Assets/Towers/Basic/towerBase.obj<>uid://dm54dvratkexs::::res://Scenes/Tools/selection_area.tscn
+tower.tscn::PackedScene::815280363713888909::1703970033::0::1::::<><>::uid://dfumh3oytegeu::::res://Assets/Towers/Basic/cannonLarge.obj<>res://Scripts/tower.gd<>uid://ytpgoa41mp8n::::res://Assets/Towers/Basic/towerBase.obj<>uid://dm54dvratkexs::::res://Scenes/Tools/selection_area.tscn
 tower_prototype.tscn::PackedScene::4932403062238161909::1702090795::0::1::::<><>::res://tower_prototype.gd<>res://selection_area.gd<>uid://bgvkd5jrpjnof
 ::res://Scripts/::1703464428
 CannonBall.gd::GDScript::-1::1702091275::0::1::::<>Node3D<>::
