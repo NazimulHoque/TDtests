@@ -1,8 +1,8 @@
+Button
+ColorRect
+Control
 Label
 TextureButton
-ColorRect
-Button
-Control
 CanvasLayer
 Container
 SubViewportContainer

@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dabbp5wi83h34"]
+[gd_scene load_steps=3 format=3 uid="uid://dabbp5wi83h34"]
 
+[ext_resource type="Script" path="res://sidemenu.gd" id="1_30jwa"]
 [ext_resource type="Texture2D" uid="uid://bjaqjrxmk4y0o" path="res://tower_thumb2_noBG.png" id="1_fkqmo"]
 
 [node name="Control" type="Control"]
@@ -9,41 +10,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_30jwa")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="areaoutside" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 872.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="sidemenu" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 904.0
 offset_top = 16.0
 offset_right = 1136.0
 offset_bottom = 632.0
 
-[node name="ColorRect" type="ColorRect" parent="Panel"]
+[node name="ColorRect" type="ColorRect" parent="sidemenu"]
 layout_mode = 0
-offset_right = 264.0
+offset_right = 232.0
 offset_bottom = 616.0
+mouse_filter = 2
 color = Color(1, 1, 1, 0.360784)
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="sidemenu"]
 layout_mode = 0
 offset_right = 264.0
 offset_bottom = 48.0
 text = "Side Menu UI"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="t1basicButton" type="Button" parent="sidemenu"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 120.0
-offset_bottom = 152.0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 104.0
+offset_bottom = 128.0
+action_mode = 0
 
-[node name="ColorRect" type="ColorRect" parent="Panel/Button"]
+[node name="ColorRect" type="ColorRect" parent="sidemenu/t1basicButton"]
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 96.0
+mouse_filter = 2
 color = Color(0.364706, 0.54902, 0.768627, 1)
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="Panel/Button"]
+[node name="Label" type="Label" parent="sidemenu/t1basicButton"]
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 24.0
@@ -51,25 +64,28 @@ theme_override_font_sizes/font_size = 9
 text = "T1 Cannon tower"
 horizontal_alignment = 1
 
-[node name="TowerThumb2NoBg" type="Sprite2D" parent="Panel/Button"]
+[node name="TowerThumb2NoBg" type="Sprite2D" parent="sidemenu/t1basicButton"]
 position = Vector2(48, 48)
 scale = Vector2(0.347657, 0.34375)
 texture = ExtResource("1_fkqmo")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="t1teslaButton" type="TextureButton" parent="sidemenu"]
 layout_mode = 0
-offset_left = 1016.0
-offset_top = 72.0
-offset_right = 1112.0
-offset_bottom = 168.0
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 224.0
+offset_bottom = 128.0
+action_mode = 0
 
-[node name="ColorRect" type="ColorRect" parent="TextureButton"]
+[node name="ColorRect" type="ColorRect" parent="sidemenu/t1teslaButton"]
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 96.0
+mouse_filter = 2
 color = Color(0.364706, 0.54902, 0.768627, 1)
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="TextureButton"]
+[node name="Label" type="Label" parent="sidemenu/t1teslaButton"]
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 24.0
@@ -77,7 +93,54 @@ theme_override_font_sizes/font_size = 9
 text = "T1 Testla tower"
 horizontal_alignment = 1
 
-[node name="TowerThumb2NoBg" type="Sprite2D" parent="TextureButton"]
+[node name="TowerThumb2NoBg" type="Sprite2D" parent="sidemenu/t1teslaButton"]
 position = Vector2(48, 48)
 scale = Vector2(0.347657, 0.34375)
 texture = ExtResource("1_fkqmo")
+
+[node name="cursorlabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="sidebutton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1096.0
+offset_top = 296.0
+offset_right = 1128.0
+offset_bottom = 408.0
+action_mode = 0
+
+[node name="ColorRect" type="ColorRect" parent="sidebutton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 24.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0.352941, 0.643137, 0.831373, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="sidebutton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 24.0
+offset_bottom = 88.0
+mouse_filter = 2
+color = Color(0.352941, 0.643137, 0.831373, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="sidebutton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 24.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.352941, 0.643137, 0.831373, 1)
+
+[connection signal="pressed" from="areaoutside" to="." method="_on_areaoutside_pressed"]
+[connection signal="focus_exited" from="sidemenu" to="." method="_on_sidemenu_focus_exited"]
+[connection signal="pressed" from="sidemenu/t1basicButton" to="." method="_on_t_1_basic_button_pressed"]
+[connection signal="pressed" from="sidemenu/t1teslaButton" to="." method="_on_t_1_tesla_button_pressed"]
+[connection signal="pressed" from="sidebutton" to="." method="_on_sidebutton_pressed"]

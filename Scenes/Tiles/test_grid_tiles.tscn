@@ -42,11 +42,6 @@ data = {
 script = ExtResource("2_3j4ra")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Label" type="Label" parent="GridMap"]
-offset_right = 43.0
-offset_bottom = 26.0
-text = "text"
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
 size = Vector3(143.25, 2.67414, 99.4161)
@@ -57,3 +52,5 @@ transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("4_5kbuc")]
+
+[connection signal="newtower_selected" from="CanvasLayer/Control" to="GridMap" method="_on_control_newtower_selected"]
