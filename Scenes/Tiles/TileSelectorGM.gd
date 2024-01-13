@@ -91,9 +91,7 @@ func show_newTower_UI():
 		if tower_type == 2:
 			newtower = TowersceneT1.instantiate()
 			
-		
 		add_child(newtower)
-		
 	if !tower_sel:
 		if newtower != null:
 			newtower.queue_free()

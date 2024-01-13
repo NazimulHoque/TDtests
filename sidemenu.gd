@@ -17,7 +17,8 @@ func _on_sidebutton_pressed():
 	$sidebutton.hide()
 	$sidemenu.show()
 	$areaoutside.show()
-
+	
+	
 func _on_areaoutside_pressed():
 	$sidemenu.hide()
 	$sidebutton.show()
