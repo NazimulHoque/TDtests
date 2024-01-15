@@ -1,7 +1,3 @@
-res://sidemenu.tscn
-res://MeshLibs/TDKit.tres
-res://Scenes/Tiles/test_grid_tiles.tscn
-res://ViewportCapture.tscn
-res://Scenes/Towers/tower.tscn
 res://Scenes/Tiles/tiles.tscn
+res://MeshLibs/TDKit.tres
 res://navigation_test.tscn
