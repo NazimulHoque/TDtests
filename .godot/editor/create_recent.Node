@@ -1,7 +1,13 @@
-MeshInstance3D
-Node3D
+DirectionalLight3D
+GridMap
+NavigationAgent3D
+Marker3D
 NavigationRegion3D
+Camera3D
+MeshInstance3D
 CollisionShape3D
+CharacterBody3D
+Node3D
 StaticBody3D
 Button
 ColorRect
@@ -11,14 +17,11 @@ TextureButton
 CanvasLayer
 Container
 SubViewportContainer
-DirectionalLight3D
-Camera3D
 SubViewport
 Panel
 CSGBox3D
 Sprite3D
 WorldEnvironment
-GridMap
 Area3D
 Timer
 CollisionPolygon3D
@@ -27,6 +30,3 @@ CSGMesh3D
 MultiMeshInstance3D
 NavigationObstacle3D
 NavigationLink3D
-NavigationRegion2D
-Marker3D
-TextureRect

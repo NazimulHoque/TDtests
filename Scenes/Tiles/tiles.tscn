@@ -1382,7 +1382,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_transition2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile2" type="MeshInstance3D" parent="."]
@@ -1396,10 +1396,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0105591, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
-navigation_mesh = SubResource("NavigationMesh_i3huc")
-
 [node name="tile_cornerRound2" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_o017i")
 skeleton = NodePath("")
@@ -1411,7 +1407,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_cornerRound2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_cornerSquare2" type="MeshInstance3D" parent="."]
@@ -1425,7 +1421,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_cornerSquare2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_crossing2" type="MeshInstance3D" parent="."]
@@ -1439,7 +1435,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_crossing2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_dirt2" type="MeshInstance3D" parent="."]
@@ -1453,7 +1449,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_dirt2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_end2" type="MeshInstance3D" parent="."]
@@ -1467,7 +1463,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_end2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_endRound2" type="MeshInstance3D" parent="."]
@@ -1481,7 +1477,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_endRound2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_endRoundSpawn2" type="MeshInstance3D" parent="."]
@@ -1495,7 +1491,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_endRoundSpawn2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_endSpawn2" type="MeshInstance3D" parent="."]
@@ -1509,7 +1505,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_endSpawn2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_spawn2" type="MeshInstance3D" parent="."]
@@ -1523,7 +1519,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_spawn2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_spawnRound2" type="MeshInstance3D" parent="."]
@@ -1537,7 +1533,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_spawnRound2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_split2" type="MeshInstance3D" parent="."]
@@ -1551,7 +1547,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_split2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")
 
 [node name="tile_straight2" type="MeshInstance3D" parent="."]
@@ -1565,5 +1561,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108353, 0)
 shape = SubResource("BoxShape3D_2xw3a")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="tile_straight2"]
-transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.311818, 0.00754997)
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0.00755, -0.296856, 0.00754997)
 navigation_mesh = SubResource("NavigationMesh_i3huc")

@@ -1,4 +1,4 @@
-res://sidemenu.tscn
+res://Scenes/Tiles/tiles.tscn
 res://Scenes/Towers/reg_turret.tres
 res://Scenes/Towers/red_turret2.tres
 res://Scenes/Towers/invalid.tres
@@ -6,7 +6,10 @@ res://Scenes/Towers/reg_turret3.tres
 res://Scenes/Towers/reg_base2.tres
 res://Scenes/Towers/reg_base1.tres
 res://MeshLibs/TDKit.tres
+res://MeshLibs/TileColNav.tres
+res://gridmaptest.tscn
+res://playtest_character.tscn
+res://sidemenu.tscn
 res://Scenes/Tiles/test_grid_tiles.tscn
 res://Scenes/Towers/tower.tscn
-res://Scenes/Tiles/TileSelectorGM.gd
-res://Scripts/tower.gd
+res://navChar.tscn

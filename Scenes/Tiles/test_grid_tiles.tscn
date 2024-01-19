@@ -7,12 +7,12 @@
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_v6301"]
 
-[sub_resource type="Sky" id="Sky_wxc5y"]
+[sub_resource type="Sky" id="Sky_tvq1y"]
 sky_material = SubResource("PhysicalSkyMaterial_v6301")
 
 [sub_resource type="Environment" id="Environment_qjk47"]
 background_mode = 2
-sky = SubResource("Sky_wxc5y")
+sky = SubResource("Sky_tvq1y")
 glow_enabled = true
 
 [node name="TestGridTiles" type="Node3D"]

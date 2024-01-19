@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5ts3nlspwe3a"]
+
+[sub_resource type="GDScript" id="GDScript_iy4dr"]
+script/source = "extends CharacterBody3D
+
+
+const SPEED = 5.0
+const ACCEL = 10
+
+@onready var nav : NavigationAgent3D = $NavigationAgent3D
+
+
+func _physics_process(delta):
+	var dir = Vector3()
+	
+	nav.target_position = $\"../Target\".global_position
+	
+	dir = nav.get_next_path_position() - global_position
+	dir = dir.normalized()
+	
+	
+	velocity = velocity.lerp(dir*SPEED, ACCEL*delta)
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iiikx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nemlr"]
+radius = 0.513351
+height = 2.00788
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = SubResource("GDScript_iy4dr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999405, 0)
+mesh = SubResource("CapsuleMesh_iiikx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00386, 0)
+shape = SubResource("CapsuleShape3D_nemlr")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
