@@ -10,7 +10,7 @@ var cannonball = preload("res://Scenes/Towers/cannon_ball.tscn")
 @onready var rof_timer = $Turret/Timer
 var can_shoot = true
 var shooting = false
-
+var placement_state = false
 
 
 func _ready():
@@ -78,17 +78,22 @@ func set_invalid_state(invalid_state : bool):
 	#optimization possible, check whetehre valid_state has changes so that 
 	#you arent constantly changing the scene 
 	if invalid_state:
+		placement_state = false
 		$Turret.hide()
 		$TowerBase.hide()
 		$invalid_Turret2.show()
 		$invalid_TowerBase2.show()
 	else:
+		placement_state = true
 		$Turret.show()
 		$TowerBase.show()
 		$invalid_Turret2.hide()
 		$invalid_TowerBase2.hide()
 		
 	
+	
+func can_place():
+	return placement_state
 	
 func set_default_mat():
 	#set the material for the default looking tower

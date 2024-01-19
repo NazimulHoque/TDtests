@@ -10,7 +10,8 @@ var gridposition
 var grid_pos_transform  
 var TowersceneT1 = preload("res://Scenes/Towers/tower.tscn")
 var newtower
-
+var towers_in_scene = []
+var tower_valid
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -44,7 +45,7 @@ func mouse_pos_on_map():
 		#print(pos)
 		var look_at_me = Vector3(pos.x, floor, pos.z)
 		var loc_vec = to_local(look_at_me)
-		print(look_at_me)
+		#print(look_at_me)
 		var map_pos = local_to_map(loc_vec)
 		#print("map pos", map_pos)
 		#set_cell_item(local_pos, 52, 0)
@@ -59,18 +60,23 @@ func mouse_pos_on_map():
 		#print("camera space from mouse", screen_pos)
 		#$Label.set_position(screen_pos)
 		
+		#placement gridwise
 		gridposition = to_global(local_pos)
+		#placement smooth
 		#gridposition = look_at_me
+		
 		#print(gridposition)
 		grid_pos_transform= Transform3D(Basis.from_scale(Vector3(0.5,0.5,0.5)), gridposition)
 		if newtower != null:
 			newtower.set_global_transform(grid_pos_transform)
-			if not valid_tile_index.has(tile_index):
+			tower_valid = valid_tile_index.has(tile_index)
+			if not tower_valid:
 				#print("not valid")
 				newtower.set_invalid_state(true)
 			else:
 				#print("valid")
 				newtower.set_invalid_state(false)
+			
 		
 		
 
@@ -103,6 +109,10 @@ func show_newTower_UI():
 		add_child(newtower)
 	if !tower_sel:
 		if newtower != null:
+			if newtower.can_place():
+				var placed_tower = newtower.duplicate()
+				towers_in_scene.append(placed_tower)
+				add_child(placed_tower)
 			newtower.queue_free()
 		
 		
