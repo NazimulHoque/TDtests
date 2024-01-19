@@ -1,5 +1,5 @@
 extends GridMap
-
+var valid_tile_index = [94]
 var ray_origin = Vector3()
 var ray_target = Vector3()
 var floor = 0
@@ -44,11 +44,13 @@ func mouse_pos_on_map():
 		#print(pos)
 		var look_at_me = Vector3(pos.x, floor, pos.z)
 		var loc_vec = to_local(look_at_me)
-		#print(loc_vec)
+		print(look_at_me)
 		var map_pos = local_to_map(loc_vec)
 		#print("map pos", map_pos)
 		#set_cell_item(local_pos, 52, 0)
 		var local_pos = map_to_local(map_pos)
+		var tile_index = get_cell_item(local_pos)
+		#print(tile_index)
 		#print("local pos",local_pos )
 		#must convert to global postion space for accurate postion relative to screen 
 		#print("global pos",to_global(local_pos))
@@ -56,12 +58,19 @@ func mouse_pos_on_map():
 		var screen_pos = $"../Camera3D".unproject_position(to_global(local_pos))
 		#print("camera space from mouse", screen_pos)
 		#$Label.set_position(screen_pos)
-		#print(look_at_me)
+		
 		gridposition = to_global(local_pos)
-		print(gridposition)
+		#gridposition = look_at_me
+		#print(gridposition)
 		grid_pos_transform= Transform3D(Basis.from_scale(Vector3(0.5,0.5,0.5)), gridposition)
 		if newtower != null:
 			newtower.set_global_transform(grid_pos_transform)
+			if not valid_tile_index.has(tile_index):
+				#print("not valid")
+				newtower.set_invalid_state(true)
+			else:
+				#print("valid")
+				newtower.set_invalid_state(false)
 		
 		
 

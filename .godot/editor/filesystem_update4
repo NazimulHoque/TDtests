@@ -1,3 +1,11 @@
 res://Scenes/Tiles/tiles.tscn
 res://MeshLibs/TDKit.tres
-res://navigation_test.tscn
+res://sidemenu.tscn
+res://Scenes/Tiles/TileSelectorGM.gd
+res://Scenes/Tiles/test_grid_tiles.tscn
+res://Scenes/Towers/tower.tscn
+res://Scenes/Towers/reg_base.tres
+res://Scripts/tower.gd
+res://Scenes/Towers/reg_base2.tres
+res://Scenes/Towers/reg_turret.tres
+res://Scenes/Towers/invalid.tres

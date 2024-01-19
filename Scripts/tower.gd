@@ -11,8 +11,13 @@ var cannonball = preload("res://Scenes/Towers/cannon_ball.tscn")
 var can_shoot = true
 var shooting = false
 
+
+
 func _ready():
 	rof_timer.wait_time = millis_between_shots/1000.00
+	#hide invalid turret objects on start up, invalid objects are only for ui
+	$invalid_Turret2.hide()
+	$invalid_TowerBase2.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -69,7 +74,25 @@ func _on_timer_timeout():
 	
 
 
-
+func set_invalid_state(invalid_state : bool):
+	#optimization possible, check whetehre valid_state has changes so that 
+	#you arent constantly changing the scene 
+	if invalid_state:
+		$Turret.hide()
+		$TowerBase.hide()
+		$invalid_Turret2.show()
+		$invalid_TowerBase2.show()
+	else:
+		$Turret.show()
+		$TowerBase.show()
+		$invalid_Turret2.hide()
+		$invalid_TowerBase2.hide()
+		
+	
+	
+func set_default_mat():
+	#set the material for the default looking tower
+	pass
 
 
 func detect_enemies():
