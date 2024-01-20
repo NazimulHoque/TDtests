@@ -1,8 +1,8 @@
+NavigationRegion3D
 DirectionalLight3D
 GridMap
 NavigationAgent3D
 Marker3D
-NavigationRegion3D
 Camera3D
 MeshInstance3D
 CollisionShape3D
