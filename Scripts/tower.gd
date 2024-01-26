@@ -3,6 +3,8 @@ extends Node3D
 var look_target = Vector3()
 
 var cannonball = preload("res://Scenes/Towers/cannon_ball.tscn")
+
+
 @export var muzzle_speed = 30
 @export var millis_between_shots = 1000.00
 @export var damage = 100
