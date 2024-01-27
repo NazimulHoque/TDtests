@@ -1,14 +1,8 @@
-res://sidemenu.tscn
-res://MeshLibs/TDKit.tres
 res://Scenes/Towers/reg_turret.tres
 res://Scenes/Towers/red_turret2.tres
 res://Scenes/Towers/invalid.tres
 res://Scenes/Towers/reg_turret3.tres
 res://Scenes/Towers/reg_base2.tres
 res://Scenes/Towers/reg_base1.tres
+res://MeshLibs/TDKit.tres
 res://MeshLibs/TileColNav.tres
-res://Scenes/Tiles/test_grid_tiles.tscn
-res://Scenes/Towers/tower.tscn
-res://Scenes/Tiles/tiles.tscn
-res://gridmaptest.tscn
-res://navChar.tscn
