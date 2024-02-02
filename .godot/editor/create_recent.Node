@@ -1,13 +1,16 @@
+AnimationTree
+Camera3D
+SpringArm3D
+Node3D
+CollisionShape3D
+CharacterBody3D
+MeshInstance3D
+Node
 NavigationRegion3D
 DirectionalLight3D
 GridMap
 NavigationAgent3D
 Marker3D
-Camera3D
-MeshInstance3D
-CollisionShape3D
-CharacterBody3D
-Node3D
 StaticBody3D
 Button
 ColorRect
@@ -28,5 +31,3 @@ CollisionPolygon3D
 CSGPolygon3D
 CSGMesh3D
 MultiMeshInstance3D
-NavigationObstacle3D
-NavigationLink3D

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqt7pjcsksw1n"]
+
+[ext_resource type="PackedScene" uid="uid://bkgp8jsoqhl0b" path="res://potatoman.tscn" id="1_odi8j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mokda"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 5.2
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_uuwa3"]
+sky_material = SubResource("ProceduralSkyMaterial_mokda")
+
+[sub_resource type="Environment" id="Environment_ng42g"]
+background_mode = 2
+sky = SubResource("Sky_uuwa3")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d5rwl"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5ju3q"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[node name="world" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ng42g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_d5rwl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5ju3q")
+
+[node name="potatoman" parent="." instance=ExtResource("1_odi8j")]
